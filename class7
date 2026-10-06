@@ -1,0 +1,281 @@
+# CS-1202 – Programming in Python
+
+## JOB CARD 07: Raw Material of Code
+
+**Module I – Week 3**
+
+### 1. Introduction to Module I
+
+From Job 07, we start writing **Python code by hand**. There are no Scratch or EduBlocks blocks now.
+
+The first topic is **Data Types and Literals**.
+
+Just like different materials are used for different manufacturing processes, Python uses different **data types** for different kinds of data.
+
+---
+
+## 2. Basic Data Types
+
+Python mainly uses four basic data types:
+
+### 1. Integer – `int`
+
+Stores **whole numbers** without a decimal point.
+
+Examples:
+
+```python
+42
+0
+-3
+```
+
+**Production examples:** Number of parts, machines, stations, gear teeth.
+
+---
+
+### 2. Float – `float`
+
+Stores numbers containing a **decimal point**.
+
+Examples:
+
+```python
+25.0
+0.05
+3.14
+```
+
+**Production examples:** Diameter, temperature, cycle time, measurement.
+
+**Important:**
+`25` → `int`
+`25.0` → `float`
+
+---
+
+### 3. String – `str`
+
+Stores **text written inside quotes**.
+
+Examples:
+
+```python
+"VSSUT"
+"25"
+'GO'
+```
+
+Even if a value looks like a number, quotes make it a **string**.
+
+Therefore:
+
+`25` → `int`
+`"25"` → `str`
+
+---
+
+### 4. Boolean – `bool`
+
+Stores only two possible values:
+
+```python
+True
+False
+```
+
+They are used mainly for **conditions and decisions** in `if/else`.
+
+Boolean values are written with a capital first letter and **without quotes**.
+
+---
+
+## 3. `type()` Function
+
+When we are unsure about a data type, Python can check it using `type()`.
+
+Example:
+
+```python
+x = 25
+print(type(x))
+```
+
+Output:
+
+```text
+<class 'int'>
+```
+
+Other examples:
+
+```python
+type(25.0)       → float
+type("25")        → str
+type(True)        → bool
+```
+
+### Important Rule
+
+**Predict first → Verify using `type()`**
+
+Engineers verify instead of guessing.
+
+---
+
+## 4. Connection with Job 06
+
+In Job 06 we learned:
+
+```python
+"25" + "30"
+```
+
+gives:
+
+```text
+2530
+```
+
+Now we know why:
+
+Both `"25"` and `"30"` are **strings (`str`)**. The `+` operator joins two strings instead of performing numerical addition.
+
+But:
+
+```python
+25 + 30
+```
+
+gives:
+
+```text
+55
+```
+
+because both values are integers.
+
+---
+
+## 5. Keywords / Reserved Names
+
+Some words are reserved by Python for special purposes. They are called **keywords** and cannot be used as variable names.
+
+Examples:
+
+`if, else, elif, for, while, in, True, False, and, or, not, def, return, import`
+
+For example:
+
+```python
+for = 10
+```
+
+is invalid because `for` is a Python keyword.
+
+---
+
+## 6. Rules for Variable Names
+
+A legal variable name:
+
+* Can contain **letters, digits and underscores**.
+* Cannot start with a digit.
+* Cannot be a Python keyword.
+* Should preferably use meaningful names.
+* Course convention: **lowercase with underscores**.
+
+### Examples
+
+`part_count` ✓
+`diameter` ✓
+`cycle_time` ✓
+
+`2nd_shift` ✗ → starts with a digit
+`for` ✗ → keyword
+
+Good variable names tell us what the value represents.
+
+---
+
+# Game: Goods Inward – Certify the Material
+
+The game contains **12 literals** that need to be classified into four data types:
+
+* **int** → bar stock
+* **float** → ground finish
+* **str** → nameplate
+* **bool** → limit switch
+
+For every delivery, predict its type and then verify the answer using the **`type()`** function.
+
+### Example
+
+`42` → **int**
+`25.0` → **float**
+`"25"` → **str**
+`True` → **bool**
+
+The aim is to correctly certify all **12 deliveries**.
+
+**Important traps:**
+
+* `25` is **int**
+* `25.0` is **float**
+* `"25"` is **str**
+* `True` is **bool**
+
+---
+
+## 7. Teach-Back Activity
+
+Create **three literals** of your own, including one tricky example.
+
+Give them to a new partner and ask them to identify the data types.
+
+Then check their answers using `type()`.
+
+Record the partner's **name and roll number** in the notebook.
+
+---
+
+## Quick Revision Table
+
+| Data Type | Meaning        | Example |
+| --------- | -------------- | ------- |
+| `int`     | Whole number   | `42`    |
+| `float`   | Decimal number | `25.0`  |
+| `str`     | Text in quotes | `"25"`  |
+| `bool`    | True/False     | `True`  |
+
+---
+
+## Key Takeaways
+
+1. Python data types are like different **raw materials of code**.
+2. `int` stores whole numbers.
+3. `float` stores decimal values.
+4. `str` stores text inside quotes.
+5. `bool` stores `True` or `False`.
+6. `type()` is used to check the data type.
+7. Python keywords cannot be used as variable names.
+8. Variable names cannot start with a digit.
+9. Always **predict first and verify second**.
+
+### Final Example
+
+```python
+part_count = 42
+diameter = 25.0
+part_name = "Shaft"
+accepted = True
+```
+
+Here:
+
+`part_count` → `int`
+`diameter` → `float`
+`part_name` → `str`
+`accepted` → `bool`
+
+**Final idea:** Correct data type = correct raw material for the program.
