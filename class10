@@ -1,0 +1,305 @@
+# CS-1202 – Programming in Python
+
+## JOB CARD 10: The Tool Crib
+
+**Module II – Week 4**
+
+### 1. Introduction to Modules
+
+Python has thousands of ready-made tools. These tools are stored in **modules**.
+
+A **module** is a collection of functions and useful tools that can be imported into a Python program.
+
+The `import` statement is like a **requisition slip** that brings tools from the tool crib to our workstation.
+
+Examples:
+
+* `math` → mathematical tools
+* `random` → random number/data generation
+* `datetime` → date and time operations
+
+---
+
+## 2. Importing Modules
+
+There are different ways to import tools.
+
+### A. Import the Whole Module
+
+```python
+import math
+```
+
+Then use the module name:
+
+```python
+math.sqrt(50)
+math.pi
+```
+
+Here, `sqrt` and `pi` are accessed through `math`.
+
+---
+
+### B. Import a Specific Tool
+
+```python
+from math import sqrt
+```
+
+Now we can directly write:
+
+```python
+sqrt(50)
+```
+
+We do not need to write `math.sqrt`.
+
+### Difference
+
+| Method        | Example                              |
+| ------------- | ------------------------------------ |
+| Whole module  | `import math` → `math.sqrt(50)`      |
+| Specific tool | `from math import sqrt` → `sqrt(50)` |
+
+---
+
+## 3. Exploring a Module
+
+We do not need to memorize every available function.
+
+### `dir()`
+
+Shows the available names/tools in a module.
+
+```python
+dir(math)
+```
+
+### `help()`
+
+Provides information about a particular function.
+
+```python
+help(math.sqrt)
+```
+
+These are useful for discovering and understanding Python tools.
+
+---
+
+## 4. NameError
+
+A **NameError** occurs when Python does not recognize a name because it has not been defined or imported.
+
+Example:
+
+```python
+sqrt(50)
+```
+
+If `sqrt` was not imported, Python gives:
+
+**NameError: name 'sqrt' is not defined**
+
+Correct:
+
+```python
+from math import sqrt
+print(sqrt(50))
+```
+
+or:
+
+```python
+import math
+print(math.sqrt(50))
+```
+
+### Easy Meaning
+
+**NameError = Tool/name was not available or signed out.**
+
+---
+
+## 5. Three Error Types Learned
+
+| Error          | Meaning                               |
+| -------------- | ------------------------------------- |
+| **TypeError**  | Wrong/incompatible data types         |
+| **ValueError** | Correct type but invalid value        |
+| **NameError**  | Name/function not defined or imported |
+
+Always inspect the error message to identify the type of problem.
+
+---
+
+# 6. Floor vs Ceiling
+
+We already learned **floor division `//`**.
+
+### Floor Thinking
+
+`//` tells us how many **complete groups** we can make.
+
+Example:
+
+```python
+137 // 12
+```
+
+= **11**
+
+So, 11 boxes can be completely filled.
+
+### Ceiling Thinking
+
+Sometimes we need to know how many boxes we must **order**.
+
+```python
+math.ceil(137 / 12)
+```
+
+= **12**
+
+We need 12 boxes to hold all 137 parts.
+
+### Easy Rule
+
+**Boxes I can completely fill → `//`**
+**Boxes I need to order → `math.ceil()`**
+
+---
+
+## 7. Random Module
+
+The `random` module is useful for creating simulated data when real measurements are not available.
+
+### Random Integer
+
+```python
+random.randint(1, 6)
+```
+
+Generates a random integer from **1 to 6**.
+
+### Random Decimal
+
+```python
+random.uniform(24.90, 25.10)
+```
+
+Generates a random decimal value between the given limits.
+
+This can be used to simulate **shaft diameter measurements**.
+
+---
+
+# Game: The Requisition Desk
+
+The game contains **6 jobs**.
+
+For each job, three different import/requisition slips are shown. Only **one slip correctly provides the required tool**.
+
+Your task is to:
+
+1. Understand which tool is required.
+2. Select the correct import statement.
+3. Use the tool correctly.
+4. Avoid the error caused by a wrong import.
+
+The game helps practice `import` and `from ... import ...`.
+
+---
+
+## 8. Simulated Inspection Activity
+
+Use `random.uniform()` to generate **10 random shaft diameters**:
+
+```python
+random.uniform(24.90, 25.10)
+```
+
+Then classify each diameter using the three bins from Job 09:
+
+* **REWORK:** `dia > 25.05`
+* **SCRAP:** `dia < 24.95`
+* **ACCEPT:** `24.95 ≤ dia ≤ 25.05`
+
+This simulates a real inspection bench when actual measurements are unavailable.
+
+---
+
+## 9. Teach-Back
+
+Explain the difference between:
+
+```python
+import math
+```
+
+and:
+
+```python
+from math import sqrt
+```
+
+using the **tool crib example**.
+
+Record the new partner's **name and roll number**.
+
+---
+
+## Quick Revision
+
+* **Module** → Collection of ready-made Python tools.
+* `import math` → Brings the complete `math` module.
+* `from math import sqrt` → Brings only `sqrt`.
+* `dir()` → Shows available tools.
+* `help()` → Shows information about a tool.
+* `random.randint()` → Random integer.
+* `random.uniform()` → Random decimal.
+* `math.ceil()` → Rounds upward to the next whole number.
+* **NameError** → Name/tool not defined.
+
+### Manufacturing Connection
+
+**Tool Crib → Import → Tool at workstation → Use tool → Produce result**
+
+Similarly:
+
+**Python Module → `import` → Function → Operation → Output**
+
+---
+
+## Homework / Dispatch
+
+1. Write a **1 sheet / 2-page notebook entry** covering Jobs 07 + 08.
+2. Include:
+
+   * Data types/material catalogue.
+   * TypeError traceback and meaning.
+   * Two `//` and `%` problems.
+   * Both teach-back peers' names + roll numbers.
+3. Watch **MIT 6.0001 Lecture 2**.
+4. In Colab, run:
+
+   * `random.uniform()` ten times.
+   * Three-bin inspection.
+   * `boxes*12 + loose == total` audit.
+5. Ask Gemini for **three real-world uses of `%` outside manufacturing**, verify one with your own numbers, and record it.
+6. Continue **NPTEL Week 3**.
+
+### Final Takeaway
+
+**Modules are Python's tool crib.**
+
+`import` → **request the tool**
+`function` → **use the tool**
+`math` / `random` → **specialized toolboxes**
+
+And remember:
+
+**`//` = complete groups**
+**`math.ceil()` = groups required**
+**NameError = tool/name not imported or defined**
