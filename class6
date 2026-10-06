@@ -1,0 +1,217 @@
+# CS-1202 – Programming in Python
+
+## JOB CARD 06: Full Transition – The Blocks Come Off
+
+**Foundations – Week 2 Finale**
+
+### 1. Full Transition to Python
+
+Job 06 is the final day of the **Foundations Module**. After completing EduBlocks Lessons 5–6, we move from block-based programming to **pure Python**.
+
+The journey so far:
+
+**Scratch → EduBlocks → Python Text**
+
+The blocks were only **scaffolding** to help us understand programming logic. The Python code was the actual program.
+
+From **Job 07**, we will start writing Python code ourselves.
+
+---
+
+## 2. EduBlocks Lessons 5–6
+
+In Lessons 5–6, we continue practicing Python through EduBlocks.
+
+A new activity rule is used:
+
+> **Navigator reads only the Python panel, not the blocks.**
+
+This helps students become comfortable with reading actual Python code.
+
+---
+
+## 3. Scaffolding Concept
+
+Consider the following program:
+
+```python
+count = 0
+for i in range(5):
+    count = count + 1
+print("parts made:", count)
+```
+
+The Scratch/EduBlocks blocks helped us understand this program visually.
+
+When the blocks are removed, the **Python code remains**.
+
+Therefore:
+
+**Blocks = Scaffolding**
+**Python = Building**
+
+The important idea is that programming logic remains the same even when the visual blocks disappear.
+
+---
+
+## 4. Important Python Concepts
+
+### A. `range(4)`
+
+`range(4)` starts from **0**, not 1.
+
+It produces:
+
+**0, 1, 2, 3**
+
+So:
+
+```python
+for i in range(4):
+    print(i)
+```
+
+Output:
+
+```text
+0
+1
+2
+3
+```
+
+---
+
+### B. Strings vs Numbers
+
+Numbers are used for mathematical operations, while strings are text.
+
+For example:
+
+```python
+25 + 30
+```
+
+gives:
+
+**55**
+
+But:
+
+```python
+"25" + "30"
+```
+
+gives:
+
+**2530**
+
+Because strings are joined together instead of being mathematically added.
+
+**Remember:**
+`25 + 30` → **55**
+`"25" + "30"` → **"2530"**
+
+---
+
+## 5. Indentation
+
+**Indentation** means leaving spaces at the beginning of a line.
+
+Python uses indentation to show which statements belong inside a loop or an `if` statement.
+
+Example:
+
+```python
+for i in range(3):
+    print(i)
+```
+
+The indented `print(i)` is **inside the loop**.
+
+Thus:
+
+**Colon `:` + Indentation = Program structure**
+
+It performs a role similar to the outline of a block in Scratch.
+
+---
+
+## 6. Dry Run / First Article Inspection
+
+Before running a program, a programmer should predict its output by tracing the code step by step.
+
+This is called a **dry run**.
+
+It is similar to **First Article Inspection** in manufacturing:
+
+**Manufacturing:** Make one part → Inspect → Start mass production
+
+**Programming:** Dry-run code → Predict output → Run → Check result
+
+---
+
+# Game: First Article Inspection
+
+The game contains **6 pure-Python snippets**.
+
+For each snippet:
+
+1. Read the code carefully.
+2. Dry-run it.
+3. Predict the exact output.
+4. Check the answer.
+
+The aim is to pass all **6 articles**.
+
+**PASSED = Correct prediction**
+**SCRAPPED = Wrong prediction**
+
+The difficult questions often involve `range()` and strings, so these concepts should be checked carefully.
+
+---
+
+## 7. Teach-Back
+
+A new partner is given a pure-Python line from today's work.
+
+The student must:
+
+* Read the Python line.
+* Explain what it does in **simple words**.
+* Record the partner's **name and roll number**.
+
+---
+
+## 8. Key Takeaways
+
+* Scratch and EduBlocks were used as **scaffolding**.
+* Python text is the actual programming language we will write.
+* `range(4)` gives **0, 1, 2, 3**.
+* `"25" + "30"` gives **"2530"**, not 55.
+* Indentation shows the structure of Python code.
+* **Dry-running** means predicting output before execution.
+* Always **predict → run → check**.
+
+### Programming Journey
+
+**Scratch → EduBlocks → Pure Python → Write Python Yourself**
+
+---
+
+## Homework / Dispatch
+
+1. Write a **1 sheet / 2-page notebook entry** including:
+
+   * Scaffolding concept in your own words.
+   * Both classic traps.
+   * Teach-back peer's name + roll number.
+2. **Tomorrow: Work Order 02** – Lab, Friday 9–11 AM, A-11.
+3. Keep your **EduBlocks account working** and remember your GitHub username.
+4. Use Gemini to predict and explain the output of a short Python program, then verify it by running the code.
+5. Complete **NPTEL Week 2**.
+6. Prepare for **Job 07 – Module I**, where we begin **data types and literals**.
+
+### Final Takeaway
+
+**The blocks were the scaffolding, not the building. Now the scaffolding comes off, and we begin writing the Python ourselves.**
