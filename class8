@@ -1,0 +1,291 @@
+# CS-1202 – Programming in Python
+
+## JOB CARD 08: Feeds and Speeds
+
+**Module I – Week 3**
+
+### 1. Operators in Python
+
+After learning data types, we now use **operators** to perform calculations and operations on data.
+
+Common arithmetic operators are:
+
+| Operator | Meaning          | Example          |
+| -------- | ---------------- | ---------------- |
+| `+`      | Addition         | `10 + 5 = 15`    |
+| `-`      | Subtraction      | `10 - 5 = 5`     |
+| `*`      | Multiplication   | `10 * 5 = 50`    |
+| `/`      | Division         | `10 / 5 = 2.0`   |
+| `//`     | Floor division   | `137 // 12 = 11` |
+| `%`      | Modulo/remainder | `137 % 12 = 5`   |
+| `**`     | Power            | `2 ** 3 = 8`     |
+
+### Important
+
+`/` always gives a **float**.
+
+```python
+60 / 4
+```
+
+Output:
+
+```text
+15.0
+```
+
+It does not give `15`.
+
+---
+
+## 2. Floor Division `//`
+
+`//` gives the number of **complete groups** after division.
+
+### Manufacturing Example
+
+137 parts are packed into boxes of 12.
+
+```python
+137 // 12
+```
+
+Output:
+
+**11**
+
+So, there are **11 complete boxes**.
+
+---
+
+## 3. Modulo `%`
+
+`%` gives the **remainder** after division.
+
+```python
+137 % 12
+```
+
+Output:
+
+**5**
+
+Therefore:
+
+**137 parts = 11 full boxes + 5 loose parts**
+
+### Easy Rule
+
+**Full boxes → `//`**
+**Leftover parts → `%`**
+
+---
+
+## 4. Audit / Cross-Check
+
+The answers obtained using `//` and `%` can be checked using:
+
+```python
+boxes * 12 + loose == 137
+```
+
+Substituting the values:
+
+```python
+11 * 12 + 5 == 137
+```
+
+Result:
+
+**True**
+
+This is a simple way to verify our calculation.
+
+### Another Example
+
+For 130 minutes:
+
+```python
+130 // 60
+```
+
+= **2 hours**
+
+```python
+130 % 60
+```
+
+= **10 minutes**
+
+Therefore:
+
+**130 minutes = 2 hours 10 minutes**
+
+---
+
+## 5. TypeError
+
+Python does not allow incompatible data types to be used together in some operations.
+
+Example:
+
+```python
+25 + "30"
+```
+
+This produces a **TypeError** because:
+
+* `25` is `int`
+* `"30"` is `str`
+
+Python cannot directly add an integer and a string.
+
+### Fix using Conversion
+
+Convert the string into an integer:
+
+```python
+25 + int("30")
+```
+
+Output:
+
+**55**
+
+Or convert the integer into a string:
+
+```python
+str(25) + "30"
+```
+
+Output:
+
+**"2530"**
+
+### Important
+
+A traceback/error message acts like an **inspection report**. It tells us what went wrong and which data types were involved.
+
+---
+
+## 6. Type Conversion
+
+Python provides functions to convert between data types.
+
+* `int()` → converts to integer
+* `float()` → converts to float
+* `str()` → converts to string
+
+Example:
+
+```python
+int("30")       # 30
+float("3.14")   # 3.14
+str(25)         # "25"
+```
+
+---
+
+## 7. `input()` Function
+
+`input()` is used to take information from the user.
+
+An important point is:
+
+> **`input()` always returns a string (`str`).**
+
+Therefore, when numerical input is required, we use conversion.
+
+Example:
+
+```python
+n = int(input("How many? "))
+```
+
+Here:
+
+1. `input()` takes the user's input as a string.
+2. `int()` converts it into an integer.
+3. The value is stored in `n`.
+
+---
+
+# Game: Fill the Operator
+
+The game contains **8 machine setups** where an operator is missing.
+
+Possible operators include:
+
+`+  -  *  /  //  %  **`
+
+For each setup:
+
+1. Read the description.
+2. Understand what result is required.
+3. Choose the correct operator.
+4. Check the result.
+
+### Examples
+
+**Full boxes of 12 from 137 parts:**
+→ `137 // 12`
+
+**Parts left over:**
+→ `137 % 12`
+
+**Double a value twice:**
+→ `2 ** 2`
+
+The game helps us practice selecting the correct operator for a real problem.
+
+---
+
+## 8. Activity
+
+After completing the operator game, create **two shop-floor problems** of your own that require `//` and `%`.
+
+Example:
+
+**Problem 1:** 250 parts are packed into boxes of 20. How many full boxes?
+
+```python
+250 // 20
+```
+
+**Problem 2:** How many parts are left?
+
+```python
+250 % 20
+```
+
+Then give one problem to a new partner. They write the Python expression and you inspect it.
+
+Record the partner's **name and roll number**.
+
+---
+
+## Quick Revision
+
+* `+` → Add
+* `-` → Subtract
+* `*` → Multiply
+* `/` → Divide and gives **float**
+* `//` → Complete groups / floor division
+* `%` → Remainder
+* `**` → Power
+* `input()` → Takes user input as **string**
+* `int()` → Converts to integer
+* `float()` → Converts to float
+* `str()` → Converts to string
+
+### Final Takeaway
+
+**Operators transform data into useful results.**
+
+For production problems:
+
+**Full groups → `//`**
+**Leftovers → `%`**
+**User number → `int(input())`**
+
+And whenever Python reports a **TypeError**, inspect the data types and convert them if necessary.
