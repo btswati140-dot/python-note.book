@@ -1,0 +1,301 @@
+# CS-1202 – Programming in Python
+
+## JOB CARD 09: Go / No-Go Gauging, in Code
+
+**Module I – Week 3 Finale**
+
+### 1. Introduction
+
+In Week 1, we learned the **Go/No-Go gauge** using a game. In Job 09, we write the same inspection logic in **pure Python**.
+
+Instead of only two results, real inspection needs **three bins**:
+
+* **ACCEPT** – within tolerance
+* **REWORK** – oversize and can be machined again
+* **SCRAP** – undersize and cannot be corrected
+
+---
+
+## 2. If / Elif / Else
+
+Python uses `if`, `elif` and `else` to make decisions.
+
+For a shaft:
+
+**Specification:**
+Diameter = **25.00 ± 0.05 mm**
+
+Therefore:
+
+* `24.95 ≤ dia ≤ 25.05` → ACCEPT
+* `dia > 25.05` → REWORK
+* `dia < 24.95` → SCRAP
+
+### Python Program
+
+```python
+dia = float(input("Measured diameter: "))
+
+if dia > 25.05:
+    print("REWORK")
+elif dia < 24.95:
+    print("SCRAP")
+else:
+    print("ACCEPT")
+```
+
+The conditions are checked **from top to bottom**, and exactly **one branch** is executed.
+
+---
+
+## 3. Why `elif`?
+
+`elif` is used when there are multiple possible conditions but only **one result should occur**.
+
+A part cannot physically fall into two bins at the same time.
+
+Using separate `if` statements could allow more than one condition to be checked independently.
+
+Therefore:
+
+**One inspection ladder → One final bin**
+
+---
+
+## 4. Loops
+
+A loop repeats a set of instructions.
+
+### `for` Loop
+
+Use `for` when the number of repetitions is **known**.
+
+Example:
+
+> Inspect exactly 10 parts.
+
+```python
+for i in range(10):
+    print("Inspect part")
+```
+
+### `while` Loop
+
+Use `while` when repetition continues until a **condition changes**.
+
+Example:
+
+> Keep checking until the gauge reads OK.
+
+```python
+while dia != 25.0:
+    # inspect
+    dia = ...
+```
+
+### Easy Rule
+
+**Known number → `for`**
+**Unknown number / condition-based → `while`**
+
+---
+
+## 5. `break` and `continue`
+
+### `break`
+
+`break` immediately **stops the loop**.
+
+Example:
+
+> Stop the batch when the first scrap is found.
+
+```python
+if scrap:
+    break
+```
+
+### `continue`
+
+`continue` **skips the current iteration** and moves to the next one.
+
+Example:
+
+> Skip one defective reading and continue inspecting the remaining parts.
+
+---
+
+# 6. Batch Inspector Activity
+
+Extend the three-bin inspection into a **batch inspector**.
+
+The program should:
+
+1. Read **10 diameters**.
+2. Check every diameter.
+3. Sort each part into:
+
+   * ACCEPT
+   * REWORK
+   * SCRAP
+4. Maintain **three counters**.
+5. Print the final number of parts in each bin.
+
+Example idea:
+
+```text
+ACCEPT: 6
+REWORK: 2
+SCRAP: 2
+```
+
+The handwritten program is then verified by running it in **Colab**.
+
+---
+
+# Game: Line Inspection
+
+The game contains **6 Python programs**.
+
+Each program has **exactly one defective line**.
+
+Your task is to:
+
+1. Read the stated purpose.
+2. Dry-run the program.
+3. Find the incorrect line.
+4. Select the faulty line.
+
+The game tests common Python errors and develops programming inspection skills.
+
+---
+
+## 7. Four Classic Python Defects
+
+### 1. Missing Colon
+
+Wrong:
+
+```python
+if x > 10
+```
+
+Correct:
+
+```python
+if x > 10:
+```
+
+---
+
+### 2. `=` instead of `==`
+
+`=` means **assignment**.
+
+`==` means **comparison**.
+
+Wrong:
+
+```python
+if x = 10:
+```
+
+Correct:
+
+```python
+if x == 10:
+```
+
+---
+
+### 3. Missing Indentation
+
+Wrong:
+
+```python
+if x > 10:
+print("Large")
+```
+
+Correct:
+
+```python
+if x > 10:
+    print("Large")
+```
+
+---
+
+### 4. Infinite `while` Loop
+
+A `while` loop must eventually change its condition or it may run forever.
+
+Example problem:
+
+```python
+x = 1
+while x < 5:
+    print(x)
+```
+
+Here `x` never changes, so the condition always remains true.
+
+---
+
+## 8. Teach-Back
+
+Give your handwritten Python program to a **new partner**.
+
+The partner reads the code without help and explains what it does.
+
+If they cannot understand it, inspect and improve the code.
+
+Record the partner's **name and roll number** in the notebook.
+
+---
+
+## Quick Revision
+
+| Concept    | Use                         |
+| ---------- | --------------------------- |
+| `if`       | First condition             |
+| `elif`     | Another condition           |
+| `else`     | Everything remaining        |
+| `for`      | Known number of repetitions |
+| `while`    | Condition-based repetition  |
+| `break`    | Stop loop                   |
+| `continue` | Skip current iteration      |
+| `=`        | Assignment                  |
+| `==`       | Comparison                  |
+
+### Manufacturing Logic
+
+**Measured diameter → Check limits → Choose one bin**
+
+`> 25.05` → **REWORK**
+`< 24.95` → **SCRAP**
+Otherwise → **ACCEPT**
+
+---
+
+## Homework / Dispatch
+
+1. Write a **1 sheet / 2-page notebook entry** containing:
+
+   * Three-bin program.
+   * Explanation of all three bins.
+   * Batch inspector program.
+   * Teach-back peer's name + roll number.
+2. Tomorrow: **Work Order 03**, Friday 9–11 AM, A-11.
+3. Type and run the batch inspector in **Colab** and commit it.
+4. Ask Gemini when `while` is a wrong choice and `for` is better, and vice versa. Test the answer with a small Colab program.
+5. Complete **NPTEL Week 3**.
+
+### Final Takeaway
+
+**if/elif/else → decision**
+**for/while → repetition**
+**break → stop**
+**continue → skip**
+
+Module I connects programming directly with **real inspection and production processes**.
