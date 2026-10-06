@@ -1,0 +1,159 @@
+# CS-1202 – Programming in Python
+
+## JOB CARD 03: Joy of Computing – Week 1 Debrief
+
+**Foundations – Week 1**
+
+### 1. Week 1 Debrief
+
+Job 03 is a **quality-circle discussion** based on NPTEL Week 1 videos. It is mainly about discussing what we learned rather than a new lecture.
+
+Each student brings:
+
+* **One “Wow”** – something surprising or interesting learned.
+* **One Question** – something that was confusing or needs explanation.
+
+The aim is to discuss ideas, ask precise questions and connect computing with real engineering problems.
+
+---
+
+### 2. What We Learned in Week 1
+
+The main ideas of Week 1 were:
+
+* **Algorithm:** A clear sequence of steps to solve a problem.
+* **Sequence:** Instructions performed in a fixed order.
+* **Loop:** Repeats an operation multiple times.
+* **If/Else:** Makes a decision based on a condition.
+* **Input → Process → Output:** Basic flow of a program.
+* **Debugging:** Finding and correcting errors.
+
+These concepts are useful not only in programming but also in manufacturing and production processes.
+
+---
+
+### 3. Binary Search / Half-Splitting
+
+**Binary search** is a method of finding something by repeatedly dividing the search area into half.
+
+Example: Suppose there are **100 stations** and exactly one station is faulty.
+
+Instead of checking every station one by one:
+
+1. Check the middle of the range.
+2. Decide which half contains the faulty station.
+3. Ignore the other half.
+4. Again divide the remaining range into half.
+5. Continue until the faulty station is found.
+
+This requires **at most 7 checks** for 100 stations.
+
+**Why?**
+
+Each check removes approximately half the possibilities:
+
+100 → 50 → 25 → 13 → 7 → 4 → 2 → 1
+
+Therefore, **7 checks can find 1 faulty station among 100**, while checking one by one could require up to 100 checks.
+
+---
+
+## Game: Find the Faulty Station
+
+### Rules
+
+There are **100 stations** and exactly **one faulty station**.
+
+* Think of any station number from **1 to 100**.
+* Keep the number secret.
+* The system asks **Yes/No questions**.
+* Answer honestly.
+* The system uses **half-splitting/binary search** to find the station.
+* Maximum checks allowed = **7**.
+
+**Example idea:**
+If the faulty station is greater than 50, search stations 51–100. Otherwise, search 1–50.
+
+### Important Lesson
+
+The game demonstrates that **binary search is much faster than checking every possibility one by one**.
+
+It also shows:
+
+> **Computers trust their inputs.**
+
+If wrong information is given, the computer may confidently produce the wrong result.
+
+---
+
+### 4. Computing on the Shop Floor
+
+Computing is closely connected to production engineering.
+
+Examples:
+
+* Finding faulty machines/stations.
+* Checking quality data.
+* Repeating machine operations.
+* Making accept/reject decisions.
+* Searching large amounts of production data.
+
+Thus, programming concepts can be applied directly to real manufacturing problems.
+
+---
+
+### 5. Quality Circle Rule
+
+In a debrief, **there are no wrong questions**.
+
+If something is confusing, it should be reported and discussed like an engineer identifying a defect in a process.
+
+Asking a **clear and precise question** is an important professional skill.
+
+---
+
+## Week 1 Concept Summary
+
+| Concept       | Meaning                                             |
+| ------------- | --------------------------------------------------- |
+| Algorithm     | Steps to solve a problem                            |
+| Sequence      | Instructions in order                               |
+| Loop          | Repeats instructions                                |
+| If/Else       | Makes a decision                                    |
+| Binary Search | Finds an item by repeatedly halving the search area |
+| Debugging     | Finding and fixing errors                           |
+| Input         | Information given to a program                      |
+| Output        | Result produced by a program                        |
+
+---
+
+## Setup for Job 04
+
+Before Job 04:
+
+1. Create an **EduBlocks account** and open the first sample project.
+2. Continue with **NPTEL Week 2** videos.
+3. Keep sharing work in the **Scratch studio**.
+4. EduBlocks will show the same programming logic using **Python text** alongside blocks.
+
+The next stage is moving from **block-based programming to text-based Python**.
+
+---
+
+## Homework / Dispatch
+
+1. Write a **1 sheet / 2-page notebook entry** containing:
+
+   * Your Week 1 **Wow**
+   * The question you received
+   * Your attempt to answer it
+   * Peer’s **name + roll number**
+2. Ask Gemini to explain **binary search using a different real-life example** and record the answer in your Google Site.
+3. Create an **EduBlocks account** and open the first sample project.
+4. Start **NPTEL Week 2** videos.
+
+### Final Takeaway
+
+Week 1 taught the basic way of thinking like a programmer:
+
+**Understand the problem → Make an algorithm → Follow the sequence → Make decisions → Repeat when needed → Check and debug the result.**
