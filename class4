@@ -1,0 +1,155 @@
+# CS-1202 – Programming in Python
+
+## JOB CARD 04: Blocks Become Text
+
+**Foundations – Week 1**
+
+### 1. Introduction
+
+In previous classes, we used **Scratch blocks** to learn programming logic. In Job 04, the same logic is introduced using **EduBlocks**, where Python code appears beside the blocks.
+
+We are not learning completely new logic. We are simply seeing how the blocks are converted into **Python text**.
+
+**Scratch/EduBlocks → Python**
+
+---
+
+### 2. EduBlocks
+
+**EduBlocks** is a block-based programming environment that helps beginners learn Python.
+
+As we place blocks, the corresponding Python code is generated automatically.
+
+For example:
+
+* **Say** → `print()`
+* **Repeat** → `for ... range()`
+* **Decide** → `if ... else`
+* **Remember** → `variable = value`
+
+This helps us understand Python syntax before writing it manually.
+
+---
+
+### 3. Blocks and Their Python Equivalent
+
+| Block / Logic | Python             |
+| ------------- | ------------------ |
+| Say           | `print()`          |
+| Repeat        | `for i in range()` |
+| If / Else     | `if ... else`      |
+| Variable      | `x = value`        |
+
+**Example:**
+
+Scratch/EduBlocks:
+**Repeat 5 times → Say “Hello”**
+
+Python:
+
+```python
+for i in range(5):
+    print("Hello")
+```
+
+---
+
+### 4. Colon and Indentation
+
+Python uses a **colon `:`** after statements such as `for` and `if`.
+
+Example:
+
+```python
+if x > 10:
+    print("Large")
+else:
+    print("Small")
+```
+
+The **indentation** shows which instructions belong inside the `if`, `else`, or `for` block.
+
+In Scratch, the block shape shows this structure visually. In Python, **colon + indentation** performs the same job.
+
+---
+
+### 5. Why Move from Blocks to Text?
+
+Blocks are easier for beginners because they visually show the structure and reduce syntax errors.
+
+Text-based Python is more precise and professional because:
+
+* Large programs are easier to write and manage.
+* Code can be edited quickly.
+* Python is widely used in real engineering and automation applications.
+
+Thus, blocks help us **understand logic**, while text helps us **build real programs**.
+
+---
+
+## Game: Blueprint → Part
+
+This game helps us understand the relationship between **EduBlocks and Python**.
+
+* A **block** is the blueprint.
+* The corresponding **Python line** is the finished part.
+* Match each block with the Python code it produces.
+* There are **8 pairs** to match.
+* The goal is to clear all 8 with minimum mistakes.
+
+### Example Matches
+
+**Block:** Say “Hello”
+→ `print("Hello")`
+
+**Block:** Set count to 0
+→ `count = 0`
+
+**Block:** Repeat 10 times
+→ `for i in range(10):`
+
+**Block:** If condition is true
+→ `if condition:`
+
+The game is also preparation for today's **paper quiz**.
+
+**Note:** `time.sleep(1)` requires `import time` first. EduBlocks can add this automatically.
+
+---
+
+## Activity
+
+In pairs, complete **EduBlocks Lessons 1–2**.
+
+Important rule:
+
+> **Before dragging a block, say aloud the Python code it will produce.**
+
+After completing the activity, explain one block and its generated Python code to a new partner. Write the partner's **name and roll number** in the notebook.
+
+---
+
+## Important Takeaways
+
+1. EduBlocks connects **visual blocks with Python text**.
+2. `print()` is used to display output.
+3. `for ... range()` is used for repetition.
+4. `if/else` is used for decisions.
+5. Variables store values.
+6. `:` and indentation define the structure of Python code.
+7. Blocks make programming easier to understand, while text makes programming more precise.
+
+### Flow
+
+**Scratch Blocks → EduBlocks → Python Text → Real Programming**
+
+---
+
+## Job 04 Quick Revision
+
+**Repeat → `for`**
+**Decide → `if/else`**
+**Say → `print()`**
+**Remember → `variable = value`**
+
+The logic we learned in Scratch is now becoming actual Python code.
