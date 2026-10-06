@@ -1,0 +1,277 @@
+# JOB CARD 14 — Map, Filter, Mutability
+
+**CS-1202 · Programming in Python · Production Engineering**
+**Module II · Week 5**
+
+## 1. Processing a Whole List
+
+Instead of handling parts one by one using indexes, Python allows us to directly loop through a list.
+
+```python
+dias = [25.02, 24.90, 25.05, 24.98]
+
+for d in dias:
+    print(d)
+```
+
+Here, `d` directly represents each element of the list.
+
+### Useful batch functions
+
+```python
+len(dias)          # number of parts
+sum(dias)          # total
+sum(dias)/len(dias) # average
+max(dias)          # largest value
+min(dias)          # smallest value
+```
+
+These functions help in quickly analysing a complete batch.
+
+---
+
+## 2. Filtering a List
+
+Suppose the acceptable diameter is **24.95 to 25.05 mm**.
+
+### Long way — Loop + append
+
+```python
+dias = [25.02, 24.90, 25.05, 24.98]
+accepted = []
+
+for d in dias:
+    if 24.95 <= d <= 25.05:
+        accepted.append(d)
+
+print(accepted)
+```
+
+**Output:**
+
+```text
+[25.02, 25.05, 24.98]
+```
+
+### Short way — List Comprehension
+
+```python
+accepted = [d for d in dias if 24.95 <= d <= 25.05]
+```
+
+It gives the same result.
+
+**Meaning:**
+“For every `d` in `dias`, if `d` is within the limit, keep it.”
+
+List comprehension is simply a shorter way of writing a loop.
+
+---
+
+## 3. Converting Every Value
+
+List comprehension can also transform data.
+
+```python
+dias = [25.02, 24.90, 25.05]
+microns = [d * 1000 for d in dias]
+
+print(microns)
+```
+
+It multiplies every diameter by 1000.
+
+---
+
+## 4. `sorted()` vs `.sort()`
+
+### `sorted()`
+
+Creates a **new sorted list** and keeps the original unchanged.
+
+```python
+new_list = sorted(dias)
+```
+
+### `.sort()`
+
+Sorts the **original list itself**.
+
+```python
+dias.sort()
+```
+
+So, use `sorted()` when the original data must be preserved.
+
+---
+
+# 5. Mutability and Aliasing
+
+Lists are **mutable**, meaning their contents can be changed.
+
+The important trap is:
+
+```python
+shift_a = [25.02, 24.98]
+shift_b = shift_a
+```
+
+This does **not** create a new list.
+
+Both names point to the **same list**.
+
+```python
+shift_b.append(25.10)
+
+print(shift_a)
+```
+
+Output:
+
+```text
+[25.02, 24.98, 25.1]
+```
+
+Although we changed `shift_b`, `shift_a` also changed.
+
+### Why?
+
+Think of it as:
+
+**One bin → Two tags**
+
+```text
+shift_a ──┐
+          ├──> [25.02, 24.98, 25.10]
+shift_b ──┘
+```
+
+Both names refer to the same list.
+
+---
+
+## 6. Making a Real Copy
+
+To create a separate list:
+
+```python
+shift_c = shift_a.copy()
+```
+
+or
+
+```python
+shift_c = shift_a[:]
+```
+
+Now:
+
+```python
+shift_c.append(99.9)
+```
+
+does not change `shift_a`.
+
+```text
+shift_a ──> [25.02, 24.98, 25.10]
+
+shift_c ──> [25.02, 24.98, 25.10, 99.9]
+```
+
+### Key Difference
+
+| Code           | Meaning              |
+| -------------- | -------------------- |
+| `b = a`        | Same list, two names |
+| `b = a.copy()` | New independent list |
+| `b = a[:]`     | New independent list |
+
+**Mutability = ability to change data, but it can cause unexpected changes when lists are shared.**
+
+---
+
+# 7. Game — “Two Tags, One Bin”
+
+The game contains **6 short Python programs**.
+
+For each program:
+
+1. Predict what the second name contains at the end.
+2. Decide whether there is **one shared bin** or **two separate bins**.
+3. Check your prediction by running the code.
+
+The main concept tested is:
+
+```python
+b = a
+```
+
+means **aliasing**, not copying.
+
+Whereas:
+
+```python
+b = a.copy()
+```
+
+creates a separate list.
+
+### Important lesson
+
+If two names point to the same mutable list, a change through either name is visible through the other.
+
+---
+
+# 8. Manufacturing Example
+
+Suppose:
+
+```python
+batch = [25.01, 24.98, 25.06, 25.03]
+```
+
+Find accepted parts:
+
+```python
+accepted = [d for d in batch if 24.95 <= d <= 25.05]
+```
+
+Find the average:
+
+```python
+average = sum(batch) / len(batch)
+```
+
+Find the largest reading:
+
+```python
+largest = max(batch)
+```
+
+Thus, a complete batch can be **filtered, measured and reported efficiently**.
+
+---
+
+# 9. Important Takeaways
+
+* Use `for d in list` to directly visit every element.
+* `len()`, `sum()`, `min()` and `max()` help analyse a batch.
+* **List comprehension** is a compact way to create a new list.
+* `append()` adds an item to a list.
+* `sorted(x)` creates a sorted copy.
+* `x.sort()` changes the original list.
+* Lists are **mutable**.
+* `b = a` creates an **alias**, not a copy.
+* `b = a.copy()` or `b = a[:]` creates a separate list.
+* Always be careful when multiple names refer to the same mutable object.
+
+## Key Formula
+
+```text
+b = a          → Same bin
+b = a.copy()   → New bin
+b = a[:]       → New bin
+```
+
+**Core idea:**
+Python can process an entire batch at once, but mutable lists must be handled carefully because two names can refer to the same data.
