@@ -1,0 +1,274 @@
+# CS-1202 – Programming in Python
+
+## JOB CARD 11: Cycle-Time Data
+
+**Module II – Week 4**
+
+### 1. Introduction
+
+Time study is an important part of **Industrial and Production Engineering**. Traditionally, engineers used stopwatches to measure the time required for an operation.
+
+Python provides digital tools for the same purpose:
+
+* **`datetime` → Digital stopwatch**
+* **Array → Reading sheet for multiple measurements**
+
+---
+
+## 2. Measuring Time with `datetime`
+
+Python's `datetime` module can be used to measure how long a program or operation takes.
+
+### Basic Pattern
+
+```python id="i4jvwu"
+from datetime import datetime
+
+start = datetime.now()
+
+for i in range(1000000):
+    pass
+
+end = datetime.now()
+
+cycle = end - start
+print(cycle.total_seconds(), "s")
+```
+
+### Steps
+
+1. Record the **start time**.
+2. Perform the operation.
+3. Record the **end time**.
+4. Subtract start from end.
+5. Convert the duration into seconds using `total_seconds()`.
+
+**Formula:**
+
+**Cycle Time = End Time − Start Time**
+
+---
+
+## 3. Arrays
+
+An **array** stores multiple values under one name.
+
+Python's `array` module can create a **typed collection**, meaning all values in the array must be of the specified type.
+
+Example:
+
+```python id="cyg4pf"
+from array import array
+
+dias = array('f', [25.02, 24.98, 25.05])
+```
+
+Here `'f'` means the array stores **floating-point values**.
+
+### Useful Functions
+
+```python id="m3v2wi"
+len(dias)
+```
+
+gives the number of readings.
+
+For the above array:
+
+**len(dias) = 3**
+
+---
+
+## 4. Indexing
+
+Array elements are accessed using an **index**.
+
+Python uses **zero-indexing**, so counting starts from `0`.
+
+For example:
+
+```python id="72qf3u"
+dias[0]   # first reading
+dias[1]   # second reading
+dias[2]   # third reading
+```
+
+### Why does it start at 0?
+
+The index represents the **distance from the beginning**.
+
+* First element → 0 steps from the start
+* Second element → 1 step from the start
+* Third element → 2 steps from the start
+
+This is the same idea as:
+
+```python id="qkjb7m"
+range(4)
+```
+
+which gives:
+
+**0, 1, 2, 3**
+
+---
+
+## 5. Reading Sheet Statistics
+
+A time-study reading sheet should be analyzed using:
+
+### Minimum
+
+The smallest cycle time.
+
+```python id="0qv1cr"
+min(cycle_times)
+```
+
+### Maximum
+
+The largest cycle time.
+
+```python id="z3x7t4"
+max(cycle_times)
+```
+
+### Average
+
+Average can be calculated as:
+
+```python id="7sc4du"
+sum(cycle_times) / len(cycle_times)
+```
+
+These values help an engineer understand the **speed and consistency** of a process.
+
+### Important
+
+A high **maximum cycle time** can be a warning because it may indicate an unusually slow operation.
+
+---
+
+# Game: The Time Study Bench
+
+In this activity, **you become the operation being timed**.
+
+### Rules
+
+1. Tap the lamp to start.
+2. It shows **WAIT**.
+3. After a random delay it changes to **GO**.
+4. Tap immediately when it becomes green.
+5. Complete **5 trials**.
+6. Your reaction times become a Python array.
+7. The system calculates **minimum, maximum and average**.
+
+If you tap during the red/WAIT stage, it is considered **anticipation**, and the trial is repeated.
+
+The purpose is to simulate a real **time study** and collect actual measurement data.
+
+---
+
+## 6. Colab Activity
+
+Copy your generated `cycle_times` array into Colab and calculate:
+
+```python id="u4z7k9"
+min(cycle_times)
+max(cycle_times)
+sum(cycle_times) / len(cycle_times)
+```
+
+Compare your results with the Time Study Bench.
+
+If both results match, your reading sheet is **certified**.
+
+---
+
+## 7. Array vs List
+
+An array is a **typed collection**.
+
+For example:
+
+```python id="dkw5m9"
+array('f', ...)
+```
+
+stores floats only.
+
+A Python **list**, which will be introduced next, is more flexible and can store different types of values.
+
+Therefore:
+
+**Array → typed / controlled**
+**List → flexible / commonly used**
+
+---
+
+## 8. Teach-Back
+
+Explain to a new partner:
+
+> Why is the first array element `[0]` and not `[1]`?
+
+Correct explanation:
+
+**The index represents the distance from the beginning. The first element is 0 positions away from the start.**
+
+Record the partner's **name and roll number**.
+
+---
+
+## Quick Revision
+
+| Concept           | Meaning                      |
+| ----------------- | ---------------------------- |
+| `datetime.now()`  | Gets current date and time   |
+| `end - start`     | Gives duration               |
+| `total_seconds()` | Converts duration to seconds |
+| `array`           | Stores multiple typed values |
+| `len()`           | Number of elements           |
+| `[0]`             | First element                |
+| `min()`           | Smallest value               |
+| `max()`           | Largest value                |
+| `sum()`           | Total of values              |
+
+### Important Rules
+
+**Cycle Time = End − Start**
+
+**First index = 0**
+
+**Average = Sum ÷ Number of readings**
+
+**`'f'` in `array('f', ...)` = float values**
+
+---
+
+## Homework / Dispatch
+
+1. Write a **1 sheet / 2-page notebook entry** covering Jobs 10 + 11.
+2. Copy both important code panels by hand.
+3. Record your **5 time-study readings** with:
+
+   * Minimum
+   * Maximum
+   * Average
+4. In Colab, compare the execution time of:
+
+   * `range(1000000)`
+   * `range(10000000)`
+5. Ask Gemini why Python programmers generally prefer **lists over arrays** and record the answer.
+6. Continue **NPTEL Week 4**.
+7. Prepare for **Friday Work Order 04**, where loops and conditionals will be practiced.
+
+### Final Takeaway
+
+**`datetime` measures the operation.
+Arrays store the measurements.
+`min()`, `max()` and average help analyze the process.**
+
+And remember:
+
+**Python indexing starts from 0 because the index represents distance from the beginning.**
