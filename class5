@@ -1,0 +1,169 @@
+# CS-1202 – Programming in Python
+
+## JOB CARD 05: Deeper Blocks, First MIT
+
+**Foundations – Week 2**
+
+### 1. EduBlocks Lessons 3–4
+
+Job 05 starts with **EduBlocks Lessons 3–4**. The aim is to become more comfortable with converting blocks into Python.
+
+Important rule:
+
+> **Read/speak the Python first, then place the block.**
+
+This helps us understand the logic instead of only depending on visual blocks.
+
+---
+
+## 2. MIT 6.0001 – What is Computation?
+
+The class introduces **MIT 6.0001 Lecture 1**, which asks an important question:
+
+**What is computation?**
+
+Computation can be understood as following precise instructions to process information and produce a desired result.
+
+A production engineer already works with this idea through **drawings, specifications and route sheets**.
+
+---
+
+## 3. Two Kinds of Knowledge
+
+MIT's idea can be understood easily using manufacturing examples.
+
+### A. Declarative Knowledge – “The Drawing”
+
+Declarative knowledge tells us **what is true** or **what the final condition should be**.
+
+It describes the result but does not explain how to achieve it.
+
+**Example:**
+
+> Shaft diameter = **25.00 ± 0.05 mm**
+
+This tells us the required specification, but not how to manufacture the shaft.
+
+**In short:**
+**Declarative = WHAT**
+
+---
+
+### B. Imperative Knowledge – “The Route Sheet”
+
+Imperative knowledge tells us **how to achieve something**.
+
+It gives a sequence of instructions or a recipe.
+
+**Example:**
+
+> Face the end → Rough turn → Finish turn → Grind → Inspect
+
+Following these steps produces the required shaft.
+
+**In short:**
+**Imperative = HOW**
+
+---
+
+### 4. Declarative vs Imperative
+
+| Declarative                  | Imperative                            |
+| ---------------------------- | ------------------------------------- |
+| Tells **what**               | Tells **how**                         |
+| A fact/specification         | A procedure/recipe                    |
+| Describes the required state | Describes steps to reach it           |
+| Example: Diameter = 25 mm    | Example: Steps to make diameter 25 mm |
+
+### Programming Connection
+
+A **computer program is imperative knowledge** written very precisely so that a computer can follow the instructions.
+
+**Drawing → Specification → WHAT**
+**Route Sheet → Procedure → HOW**
+**Program → Precise instructions → HOW**
+
+---
+
+## Game: Spec or Process Plan?
+
+The game tests whether a statement is **declarative or imperative**.
+
+There are **10 statements**.
+
+For each statement, decide:
+
+### SPEC
+
+A **fact or requirement (WHAT)**
+
+Example:
+
+> “The shaft diameter must be 25.00 mm.”
+
+### PROCESS PLAN
+
+A **recipe or sequence of steps (HOW)**
+
+Example:
+
+> “Turn the shaft and then grind it to the required diameter.”
+
+The aim is to correctly classify all statements with minimum mistakes.
+
+**Quiz connection:** Five similar statements will be given in the written quiz.
+
+---
+
+## 5. Teach-Back Activity
+
+Explain **declarative and imperative knowledge** to a new partner using an example from your own daily life.
+
+For example:
+
+**Declarative:** “The room should be clean.”
+**Imperative:** “Sweep the floor → arrange the table → remove waste.”
+
+Record the partner's **name and roll number** in the notebook.
+
+---
+
+## 6. Key Takeaways
+
+* **Declarative knowledge = WHAT / fact**
+* **Imperative knowledge = HOW / procedure**
+* A specification tells us the required result.
+* A process plan tells us how to achieve that result.
+* A computer program is a precise set of instructions.
+* Programming is similar to writing a **route sheet for a computer**.
+* EduBlocks helps us move from visual blocks to actual Python.
+
+### Simple Example
+
+**WHAT:** Finished part must have diameter 25.00 ± 0.05 mm.
+
+**HOW:**
+Raw material → Facing → Turning → Grinding → Inspection
+
+This shows the difference between **declarative and imperative knowledge**.
+
+---
+
+## Homework / Dispatch
+
+1. Write a **1 sheet / 2-page notebook entry** covering Jobs 04 + 05.
+2. Include:
+
+   * One block → Python pair.
+   * Your own declarative/imperative example.
+   * Both teach-back partners' names + roll numbers.
+3. Watch **MIT 6.0001 Lecture 1 completely**.
+4. Complete **EduBlocks Lessons 3–4**; Lessons 5–6 are next.
+5. Ask Gemini for **declarative and imperative descriptions of the same everyday activity**, record the answer and link it to your Google Site.
+6. Continue **NPTEL Week 2**.
+
+### Final Takeaway
+
+**Declarative tells us WHAT we want.
+Imperative tells us HOW to achieve it.
+Programming converts the “HOW” into precise instructions that a computer can execute.**
