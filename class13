@@ -1,0 +1,323 @@
+# CS-1202 – Programming in Python
+
+## JOB CARD 13: A Bin of Parts
+
+**Module II – Week 5**
+
+### 1. Introduction to Lists
+
+A **list** is a collection used to store multiple values under one name.
+
+A list is like a **parts bin** in a workshop: we can add parts, remove them, change their order and access them by position.
+
+A list is created using **square brackets `[ ]`**.
+
+```python id="v1q5hz"
+parts = [25.02, 24.98, 25.05]
+```
+
+---
+
+## 2. List vs String
+
+Strings and lists both support **indexing and slicing**, but they have an important difference.
+
+### String – Immutable
+
+A string cannot be changed directly.
+
+```python id="2z7t0x"
+code = "VSSUT"
+code[0] = "X"
+```
+
+This gives a **TypeError**.
+
+### List – Mutable
+
+A list can be changed.
+
+```python id="9m0f7g"
+parts = [25.02, 24.98, 25.05]
+parts[0] = 25.01
+```
+
+Result:
+
+```text id="k7k8m2"
+[25.01, 24.98, 25.05]
+```
+
+### Easy Rule
+
+**String = immutable / engraved plate**
+
+**List = mutable / changeable parts bin**
+
+---
+
+## 3. List Indexing and Slicing
+
+Lists use the same indexing rules as strings.
+
+```python id="0v5v9h"
+parts[0]      # first element
+parts[-1]     # last element
+parts[0:2]    # first two elements
+```
+
+Remember:
+
+> **Index starts at 0.**
+
+For slicing:
+
+> **Start included, stop excluded.**
+
+---
+
+## 4. Lists Can Store Different Types
+
+Unlike a typed array, a Python list can contain different types of values.
+
+Example:
+
+```python id="j9qv6f"
+mixed = ["PE-26-0137", 25.01, True]
+```
+
+This list contains:
+
+* `str`
+* `float`
+* `bool`
+
+Therefore, lists are **flexible containers**.
+
+---
+
+# 5. List Operations
+
+### `append()`
+
+Adds an item at the **end**.
+
+```python id="y50zqi"
+parts.append(25.10)
+```
+
+---
+
+### `insert()`
+
+Adds an item at a specific position.
+
+```python id="1y82n3"
+parts.insert(1, 24.90)
+```
+
+The elements from that position shift to the right.
+
+---
+
+### `pop()`
+
+Removes and **returns** an item.
+
+```python id="6v5j7r"
+parts.pop()
+```
+
+Removes the **last item**.
+
+To remove by position:
+
+```python id="q1z9e4"
+parts.pop(0)
+```
+
+removes the item at index `0`.
+
+---
+
+### `remove()`
+
+Removes an item by its **value**.
+
+```python id="kj0h8p"
+parts.remove(24.98)
+```
+
+It removes the first matching value.
+
+---
+
+### `sort()`
+
+Arranges the list in ascending order.
+
+```python id="y5o1au"
+parts.sort()
+```
+
+### `reverse()`
+
+Reverses the order.
+
+```python id="d4y9sm"
+parts.reverse()
+```
+
+Both operations change the list **in place**.
+
+---
+
+## 6. `pop()` vs `remove()`
+
+This is an important difference.
+
+| Function        | Removes by           |
+| --------------- | -------------------- |
+| `pop(index)`    | **Position/address** |
+| `remove(value)` | **Value/identity**   |
+
+Example:
+
+```python id="k9y8ur"
+parts.pop(0)
+```
+
+means:
+
+> Remove whatever is at position 0.
+
+While:
+
+```python id="v5r2qu"
+parts.remove(24.98)
+```
+
+means:
+
+> Find and remove the value 24.98.
+
+### Important
+
+After an item is removed, the remaining elements **shift and get new indexes**.
+
+---
+
+# Game: The Parts Bin
+
+The game gives a **working bin** and a **target bin**.
+
+Your job is to transform the working bin into the target using:
+
+* `append()`
+* `insert()`
+* `pop()`
+* `remove()`
+* `sort()`
+* `reverse()`
+
+Every operation is automatically recorded as a **Python line**.
+
+### Objective
+
+1. Start the challenge.
+2. Select a part if required.
+3. Choose the correct operation.
+4. Transform the working bin into the target.
+5. Try to complete all **3 challenges** using the fewest moves.
+
+The generated operation log becomes your **program**.
+
+### Important Trap
+
+After removing an item, the indexes of later elements change.
+
+So always check the **new positions** instead of remembering the old ones.
+
+---
+
+## 7. Activity in Colab
+
+Take your winning operation log from the game and type it into Colab.
+
+Print the list after every operation.
+
+Example:
+
+```python id="0y3q5x"
+parts = [25.02, 24.98, 25.05]
+
+parts.append(25.10)
+print(parts)
+
+parts.pop(1)
+print(parts)
+```
+
+If the Colab list matches the game after every step, your result is verified.
+
+---
+
+## 8. Teach-Back
+
+Explain to a new partner:
+
+> **What is the difference between `pop()` and `remove()`?**
+
+Answer:
+
+**`pop()` removes by position/index, while `remove()` removes by value.**
+
+Record the partner's **name and roll number**.
+
+---
+
+## AI Claim Verification
+
+The class also reviews the previous **Gemini list-vs-array answer**.
+
+An AI answer should not be accepted simply because **“AI said so.”**
+
+The correct engineering habit is:
+
+**Claim → Test/Run → Verify → Accept or Correct**
+
+This is similar to checking a measurement or inspection result.
+
+---
+
+## Quick Revision
+
+| Operation     | Purpose                     |
+| ------------- | --------------------------- |
+| `append(x)`   | Add at end                  |
+| `insert(i,x)` | Add at position             |
+| `pop()`       | Remove last item            |
+| `pop(i)`      | Remove item at index        |
+| `remove(x)`   | Remove first matching value |
+| `sort()`      | Sort list                   |
+| `reverse()`   | Reverse list                |
+| `len()`       | Number of elements          |
+
+### Final Takeaway
+
+**String → Immutable nameplate**
+
+**Array → Typed collection**
+
+**List → Flexible, mutable parts bin**
+
+Lists are extremely useful because their contents can be **added, removed, changed and reordered** easily.
+
+Most importantly:
+
+**`pop()` = remove by position**
+**`remove()` = remove by value**
+
+And after removal:
+
+> **Indexes shift and are renumbered.**
