@@ -1,0 +1,336 @@
+# CS-1202 – Programming in Python
+
+## JOB CARD 12: Strings & Characters
+
+**Module II – Week 4 Closer**
+
+### 1. Introduction to Strings
+
+A **string (`str`)** is a sequence of characters enclosed in quotes.
+
+Example:
+
+```python
+code = "VSSUT-PE-26-0137"
+```
+
+A string can contain:
+
+* Letters
+* Numbers
+* Spaces
+* Special characters
+
+A string can be compared to an **engraved serial number**, where every character has a fixed position.
+
+---
+
+## 2. String Length
+
+The `len()` function gives the total number of characters.
+
+```python
+len(code)
+```
+
+For:
+
+```text
+"VSSUT-PE-26-0137"
+```
+
+the length is **16**.
+
+---
+
+## 3. String Indexing
+
+Each character has an index, and Python starts indexing from **0**.
+
+Example:
+
+```python
+code[6]
+```
+
+gives:
+
+```text
+'P'
+```
+
+### Negative Indexing
+
+Negative indexes count from the end.
+
+```python
+code[-1]
+```
+
+gives the **last character**:
+
+```text
+'7'
+```
+
+So:
+
+**First character → `[0]`**
+**Last character → `[-1]`**
+
+---
+
+## 4. String Slicing
+
+Slicing is used to extract a part of a string.
+
+### Syntax
+
+```python
+string[start:stop]
+```
+
+Important rule:
+
+> **Start is included, Stop is excluded.**
+
+The length of a slice is:
+
+**stop − start**
+
+Example:
+
+```python
+code[0:5]
+```
+
+Result:
+
+```text
+"VSSUT"
+```
+
+Indexes 0, 1, 2, 3 and 4 are included, while index 5 is excluded.
+
+### Example
+
+```python
+code[6:8]
+```
+
+Result:
+
+```text
+"PE"
+```
+
+---
+
+## 5. Other String Operations
+
+### Joining Strings – `+`
+
+```python
+"GO" + "!"
+```
+
+Output:
+
+```text
+"GO!"
+```
+
+### Repeating Strings – `*`
+
+```python
+"-" * 10
+```
+
+Output:
+
+```text
+"----------"
+```
+
+### Membership – `in`
+
+Used to check whether a substring exists.
+
+```python
+"PE" in code
+```
+
+Output:
+
+```text
+True
+```
+
+---
+
+# 6. Strings are Immutable
+
+**Immutable** means that a string cannot be changed after it is created.
+
+Example:
+
+```python
+code[13] = "9"
+```
+
+produces:
+
+**TypeError**
+
+because individual characters of a string cannot be directly changed.
+
+### Correct Method
+
+Create a **new string** using slicing:
+
+```python
+code = code[:13] + "9" + code[14:]
+```
+
+This creates a new modified string.
+
+### Easy Example
+
+**Old plate:**
+`VSSUT-PE-26-0137`
+
+**New plate:**
+`VSSUT-PE-26-0937`
+
+So:
+
+**String → Cannot modify directly → Create a new string**
+
+---
+
+# Game: The Slice Dial
+
+The game gives a serial number and asks you to extract specific fields.
+
+### How to Play
+
+1. Look at the string and its index ruler.
+2. Select the correct **start** and **stop** positions.
+3. Check the highlighted portion.
+4. Press **CUT** when the slice matches the required field.
+
+Example:
+
+```python
+code[0:5]
+```
+
+gives:
+
+```text
+"VSSUT"
+```
+
+### Main Rule
+
+**Start included + Stop excluded**
+
+For example:
+
+```python
+code[0:5]
+```
+
+includes indexes:
+
+**0, 1, 2, 3, 4**
+
+but not 5.
+
+The game contains **5 extraction tasks**. The aim is to make clean cuts with minimum mistakes.
+
+---
+
+## 7. Practical Activity
+
+Write your **roll number as a string** and divide it into its required fields using slicing.
+
+For example, if a serial number follows a fixed format:
+
+```python
+code = "VSSUT-PE-26-0137"
+```
+
+you can extract:
+
+```python
+code[0:5]    # "VSSUT"
+code[6:8]    # "PE"
+```
+
+Print each field with a suitable label.
+
+This shows why fixed formats are useful: the same slicing rules can decode similarly formatted serial numbers.
+
+---
+
+## 8. Teach-Back
+
+Give a field of your serial number to a new partner.
+
+The partner must determine the correct **start and stop indexes** on paper and write the required slice.
+
+Record the partner's **name and roll number**.
+
+---
+
+## Quick Revision
+
+| Concept        | Example        | Meaning                |
+| -------------- | -------------- | ---------------------- |
+| `len()`        | `len(code)`    | Length of string       |
+| Index          | `code[6]`      | Character at index 6   |
+| Negative index | `code[-1]`     | Last character         |
+| Slice          | `code[6:8]`    | Extract part of string |
+| `+`            | `"GO" + "!"`   | Join strings           |
+| `*`            | `"-" * 10`     | Repeat string          |
+| `in`           | `"PE" in code` | Membership test        |
+
+### Important Rules
+
+**Index starts at 0.**
+
+**Negative index counts from the end.**
+
+**Slice = `start:stop` → start included, stop excluded.**
+
+**Strings are immutable.**
+
+**To modify a string → create a new string using slices.**
+
+---
+
+## Homework / Dispatch
+
+1. Write a **1 sheet / 2-page notebook entry** covering:
+
+   * Index ruler for your roll number.
+   * Three slices with results.
+   * String immutability example.
+   * Teach-back peer's name + roll number.
+2. Tomorrow: **Work Order 04**, Friday 9–11 AM, A-11.
+3. Ask Gemini to design a **12-character gear-factory serial number** and write Python slices to decode it.
+4. Verify your slicing program in **Colab**.
+5. Keep your **list-vs-array** answer ready for Job 13.
+6. Complete **NPTEL Week 4**.
+
+### Final Takeaway
+
+A string is a sequence of characters with fixed positions.
+
+**Index → Find one character**
+**Slice → Extract a field**
+**`+` → Join**
+**`*` → Repeat**
+**`in` → Search**
+**Immutable → Cannot directly change**
