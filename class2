@@ -1,0 +1,178 @@
+# CS-1202 – Programming in Python
+
+## JOB CARD 02: Logic You Can Touch
+
+**Foundations – Week 1**
+
+### 1. From Sequence to Logic
+
+In Job 01, we learned **sequence**, where instructions are executed one after another. Real machines also need to **make decisions** and **repeat operations**.
+
+Two important concepts are:
+
+* **Decision:** Choose an action based on a condition.
+* **Repetition:** Repeat the same operation multiple times.
+
+Example:
+
+* Check whether a part is within tolerance → **Decision**
+* Stamp 500 blanks → **Repetition**
+
+---
+
+### 2. Loop / Repeat
+
+A **loop** is used to repeat a set of instructions multiple times.
+
+In Scratch, the **repeat** block runs the enclosed instructions a fixed number of times.
+
+**Example:**
+Instead of writing the same stamping operation 500 times, define it once and repeat it 500 times.
+
+**Python equivalent:**
+`for i in range(10):`
+
+Thus, loops save time and reduce repeated code.
+
+---
+
+### 3. If / Else
+
+An **if/else** statement allows a program to make a decision.
+
+**Example:**
+
+> If the part is within tolerance → Accept
+> Else → Reject
+
+In manufacturing, this is similar to a **Go/No-Go inspection**.
+
+**Python form:**
+`if condition:`
+`    accept`
+`else:`
+`    reject`
+
+---
+
+### 4. Sensing
+
+**Sensing** means asking a question about the surroundings or data.
+
+Examples:
+
+* Is the sprite touching the edge?
+* Is a key pressed?
+* What is the value of something?
+
+In Python, similar ideas are handled using `input()` and comparisons.
+
+---
+
+### 5. Variables
+
+A **variable** is a named place used to store a value.
+
+It can store:
+
+* Counter
+* Score
+* Diameter
+* Number of parts
+
+**Example:**
+`count = 0`
+
+If the counter increases once for every part, its final value tells us how many parts were processed.
+
+---
+
+### 6. Predicting / Dry Run
+
+Before running a program, we should **trace the instructions step by step** and predict the output.
+
+This is called a **dry run**.
+
+It is similar to checking a CNC program before actually running the machine.
+
+---
+
+## Game: Go / No-Go Gauge
+
+The game demonstrates how an **if/else condition** works.
+
+Ten shafts come from a lathe one by one.
+
+**Specification:**
+Diameter = **25.00 ± 0.05 mm**
+
+Therefore:
+
+**Accept:** `24.95 ≤ d ≤ 25.05 mm`
+**Reject:** Any value outside this range.
+
+Press **START** to test 10 random shaft sizes.
+
+The game keeps track of:
+
+* **Parts:** 0/10
+* **Correct:** Number correctly accepted/rejected
+* **Wrong:** Number of incorrect decisions
+
+The aim is to correctly inspect all **10 parts (10/10)**.
+
+---
+
+## Scratch Activity
+
+Upgrade the Job 01 Scratch project by adding:
+
+1. **At least one loop**
+2. **At least one if/else condition**
+3. **Bonus:** Add a variable to count something.
+
+Then share the upgraded project with the class studio.
+
+A new partner will run the project, and you must explain every decision made by your sprite. Write the **partner's name and roll number** in your notebook.
+
+---
+
+## Scratch Blocks and Python
+
+| Scratch Concept | Python Future           |
+| --------------- | ----------------------- |
+| Repeat          | `for i in range(10)`    |
+| If/Else         | `if ... else`           |
+| Sensing         | `input()` + comparisons |
+| Variable        | `count = 0`             |
+
+The logic is the same; only the way we write it changes.
+
+---
+
+## Key Takeaways
+
+* **Loop:** Repeats an operation multiple times.
+* **If/Else:** Makes a decision based on a condition.
+* **Variable:** Stores a value.
+* **Sensing:** Gets information from the surroundings/input.
+* **Dry Run:** Predicts program behaviour before execution.
+
+### Manufacturing Example
+
+**Input → Check condition → Decision → Action**
+
+Example:
+
+**Shaft diameter → Check tolerance → Accept/Reject**
+
+---
+
+## Homework / Dispatch
+
+1. Write a **1 sheet / 2-page notebook entry** covering today's blocks.
+2. Write your **if/else rule** in words.
+3. Record your peer's **name + roll number**.
+4. Ask Gemini: **“Where do loops appear in a manufacturing plant?”** Record the answer and link it on your Google Site.
+5. Share the Scratch project containing **loop + if/else**.
+6. Finish **NPTEL Week-1 videos** and come to Job 03 with **one question and one “wow”**.
